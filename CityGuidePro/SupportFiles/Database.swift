@@ -43,7 +43,7 @@ var image : UIImage? = nil
 func postToDB(typeOfAction: String, beaconID: Int, auth: String, floorNum: Int?, vc : UIViewController){        // Main function
     switch typeOfAction{
         case "beacons":
-            let url = URL(string: "http://wh-308-3922mm.dyn.wichita.edu:5000/data")
+            let url = URL(string: "https://cityguide-wsu.herokuapp.com/data")
             var request = URLRequest(url: url! as URL)
             request.httpMethod = "POST"
             var dataStr = ""
@@ -85,7 +85,7 @@ func postToDB(typeOfAction: String, beaconID: Int, auth: String, floorNum: Int?,
             uploadJob.resume()
     
         case "getFloor":
-            let url = URL(string: "http://wh-308-3922mm.dyn.wichita.edu:5000/floor")
+            let url = URL(string: "https://cityguide-wsu.herokuapp.com/floor")
             var request = URLRequest(url: url! as URL)
             request.httpMethod = "POST"
             var dataStr = ""
@@ -116,7 +116,7 @@ func postToDB(typeOfAction: String, beaconID: Int, auth: String, floorNum: Int?,
         
         case "getbeacons":
         // here becaonID is set as groupID from our main VC
-            let url = URL(string: "http://wh-308-3922mm.dyn.wichita.edu:5000/beacon")
+        let url = URL(string: "https://cityguide-wsu.herokuapp.com/beacon")
             var request = URLRequest(url: url! as URL)
             request.httpMethod = "POST"
             var dataStr = ""
